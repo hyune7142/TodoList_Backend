@@ -29,6 +29,7 @@ public class HelloController {
 		System.out.println("마스터1");
 		System.out.println("마스터1");
 		System.out.println("마스터1");
+		System.out.println("테스트");
 		
 		return hservice.getMetaData(url);
 	}
