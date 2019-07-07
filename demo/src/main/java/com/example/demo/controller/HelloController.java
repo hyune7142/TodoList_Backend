@@ -26,6 +26,8 @@ public class HelloController {
 	
 		String url = req.getParameter("url");
 		
+		System.out.println("테스트");
+		
 		return hservice.getMetaData(url);
 	}
 	
