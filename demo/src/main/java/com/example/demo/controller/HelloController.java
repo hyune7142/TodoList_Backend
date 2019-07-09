@@ -25,12 +25,7 @@ public class HelloController {
 	public Map<String, String> index(HttpServletResponse res, HttpServletRequest req) throws IOException {
 	
 		String url = req.getParameter("url");
-		
-		System.out.println("마스터1");
-		System.out.println("마스터1");
-		System.out.println("마스터1");
-		System.out.println("테스트");
-		
+				
 		return hservice.getMetaData(url);
 	}
 	

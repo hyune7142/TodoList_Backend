@@ -20,14 +20,15 @@ public class HelloServiceImpl implements HelloService {
 			
 			String connUrl = "https://"+url;
 			Document doc = Jsoup.connect(connUrl).get();
+			System.out.println(doc.toString());
 			
-			Elements metaTitle = doc.getElementsByAttributeValue("property", "og:title");			
+			Elements metaTitle = doc.getElementsByAttributeValue("property", "og:title");	
 			String title = metaTitle.attr("content");
-			
-			Elements metaDescription = doc.getElementsByAttributeValue("property", "og:description");			
+				
+			Elements metaDescription = doc.getElementsByAttributeValue("property", "og:description");
 			String description = metaDescription.attr("content");
 			
-			Elements metaImage = doc.getElementsByAttributeValue("property", "og:image");			
+			Elements metaImage = doc.getElementsByAttributeValue("property", "og:image");
 			String image = metaImage.attr("content");
 			
 			
