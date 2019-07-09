@@ -19,17 +19,38 @@ public class HelloServiceImpl implements HelloService {
 		try {
 			
 			String connUrl = "https://"+url;
+			System.out.println("URL"+connUrl);
 			Document doc = Jsoup.connect(connUrl).get();
-			System.out.println(doc.toString());
+			System.out.println("독독"+doc);
+			String title;
+			String description;
+			String image ;
+			Elements metaTitle = doc.getElementsByAttributeValue("property", "og:title");		
+			if(metaTitle.attr("content").equals("")) {
+				title=doc.select("title").text();
+			}else{
+				 title=metaTitle.attr("content");
+			};
 			
-			Elements metaTitle = doc.getElementsByAttributeValue("property", "og:title");	
-			String title = metaTitle.attr("content");
-				
+			
 			Elements metaDescription = doc.getElementsByAttributeValue("property", "og:description");
-			String description = metaDescription.attr("content");
+			if(metaDescription.attr("content").equals("")) {
+				description =  doc.getElementsByAttributeValue("name", "description").attr("content");
+			}else {
+				description	 = metaDescription.attr("content");
+			}
 			
-			Elements metaImage = doc.getElementsByAttributeValue("property", "og:image");
-			String image = metaImage.attr("content");
+			
+			Elements metaImage = doc.getElementsByAttributeValue("property", "og:image");			
+			
+			if(metaImage.attr("content").equals("")) {
+				image="https://user-images.githubusercontent.com/24848110/33519396-7e56363c-d79d-11e7-969b-09782f5ccbab.png";
+					
+					
+			}else {
+				image= metaImage.attr("content");
+			}
+		
 			
 			
 //			System.out.println(title);
