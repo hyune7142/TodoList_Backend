@@ -38,9 +38,7 @@ public class MetaDataController {
 			
 			String str_toDay = fm.format(new Date()); 						// 현재날짜
 			String str_saveDate = fm.format(result.getSaveTime());		// 저장날짜
-			
-			System.out.println("현재날짜 : "+str_toDay);
-			System.out.println("저장날짜"+str_saveDate);
+
 			
 			try {
 				Date toDay = fm.parse(str_toDay);
