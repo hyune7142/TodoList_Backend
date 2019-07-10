@@ -9,6 +9,6 @@ public interface MetaDataService {
 	
 	public MetaData getMetaData(MetaData metaData);
 	
-	public void insertMetaData(MetaData metaData);
+	public void IoMetaData(MetaData metaData, String order);
 	
 }

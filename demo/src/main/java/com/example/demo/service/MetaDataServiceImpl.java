@@ -1,5 +1,7 @@
 package com.example.demo.service;
 
+import java.util.Calendar;
+
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
@@ -21,7 +23,7 @@ public class MetaDataServiceImpl implements MetaDataService {
 	
 	
 	@Override
-	public void insertMetaData(MetaData metaData) {
+	public void IoMetaData(MetaData metaData, String order) {
 		
 		MetaData result = new MetaData();
 		
@@ -66,20 +68,28 @@ public class MetaDataServiceImpl implements MetaDataService {
 			result.setImage(image);
 			
 			System.out.println("----------------------- 크롤링결과");
-			System.out.println(result.getUrl());
-			System.out.println(result.getTitle());
-			System.out.println(result.getDescription());
-			System.out.println(result.getImage());
+			System.out.println(result.getUrl()+", "+result.getTitle()+", "+result.getDescription()+", "+result.getImage());
 			System.out.println("----------------------- 크롤링결과");
 			
-			metaDataMapper.insertMetaData(result);
+			
+			switch (order) {
+			case "insert":
+				System.out.println("INSERT 진입2");
+				metaDataMapper.insertMetaData(result);
+				break;
+
+			case "update":
+				System.out.println("UPDATE 진입2");
+				Calendar cal = Calendar.getInstance();
+				result.setSaveTime(cal.getTime());
+				metaDataMapper.updateMetaData(result);
+				break;
+			}
 			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		
 	}
-	
-	
 
 }

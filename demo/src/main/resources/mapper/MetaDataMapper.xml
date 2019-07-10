@@ -33,4 +33,14 @@
 		)
 	</insert>
 	
+	<update id="updateMetaData" parameterType="com.example.demo.domain.MetaData">
+		UPDATE metaData SET
+			title = #{title},
+			description = #{description},
+			image = #{image},
+			saveTime = #{saveTime}
+		WHERE
+			url = #{url}
+	</update>
+	
 </mapper>
