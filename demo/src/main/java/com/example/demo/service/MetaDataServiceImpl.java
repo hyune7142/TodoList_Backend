@@ -4,6 +4,7 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.domain.MetaData;
@@ -15,9 +16,12 @@ public class MetaDataServiceImpl implements MetaDataService {
 	@Autowired MetaDataMapper metaDataMapper;
 	
 	@Override
+	@Cacheable(cacheNames = "openGraphCache", key="#metaData.url")	
 	public MetaData getMetaData(MetaData metaData) {
-		return metaDataMapper.getMetaData(metaData);
-	}
+		MetaData test= metaDataMapper.getMetaData(metaData);
+		 System.out.println(test);
+		 return test;
+	}	
 	
 	
 	@Override

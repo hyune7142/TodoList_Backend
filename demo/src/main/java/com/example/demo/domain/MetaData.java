@@ -1,12 +1,17 @@
 package com.example.demo.domain;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import org.apache.ibatis.type.Alias;
 
 @Alias("MetaData")
-public class MetaData {
+public class MetaData implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String url;
 	private String title;
 	private String description;
@@ -43,6 +48,11 @@ public class MetaData {
 	}
 	public void setSaveTime(Date saveTime) {
 		this.saveTime = saveTime;
+	}
+	@Override
+	public String toString() {
+		return "MetaData [url=" + url + ", title=" + title + ", description=" + description + ", image=" + image
+				+ ", saveTime=" + saveTime + "]";
 	}
 	
 	
