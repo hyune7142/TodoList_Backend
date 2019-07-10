@@ -21,13 +21,13 @@ public class MetaDataServiceImpl implements MetaDataService {
 	@Cacheable(cacheNames = "openGraphCache", key="#metaData.url")	
 	public MetaData getMetaData(MetaData metaData) {
 		MetaData test= metaDataMapper.getMetaData(metaData);
-		 System.out.println(test);
 		 return test;
 	}	
 	
 	
 	@Override
 	public void IoMetaData(MetaData metaData, String order) {
+		
 		
 		MetaData result = new MetaData();
 		
@@ -63,6 +63,10 @@ public class MetaDataServiceImpl implements MetaDataService {
 				image="https://user-images.githubusercontent.com/24848110/33519396-7e56363c-d79d-11e7-969b-09782f5ccbab.png";
 			}else {
 				image= metaImage.attr("content");
+			}
+			
+			if(metaData.getUrl().contains("youtube")) {
+				image = metaData.getUrl()+image;
 			}
 			
 			// DB insert data setting

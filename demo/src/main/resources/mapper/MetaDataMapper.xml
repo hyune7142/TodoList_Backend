@@ -5,6 +5,20 @@
 
 
 <mapper namespace="com.example.demo.mapper.MetaDataMapper">
+	
+		<select id="getData" parameterType="com.example.demo.domain.MetaData" resultType="com.example.demo.domain.MetaData">
+		SELECT
+			url,
+			title,
+			description,
+			image,
+			saveTime
+		FROM
+			metaData
+		WHERE
+			url = #{url}
+	</select>
+
 
 	<select id="getMetaData" parameterType="com.example.demo.domain.MetaData" resultType="com.example.demo.domain.MetaData">
 		SELECT

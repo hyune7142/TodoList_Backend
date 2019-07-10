@@ -6,6 +6,8 @@ import com.example.demo.domain.MetaData;
 @Repository
 public interface MetaDataMapper {
 	
+	public MetaData getData(MetaData metaData);
+	
 	// select MetaData
 	public MetaData getMetaData(MetaData metaData);
 	
