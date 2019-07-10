@@ -1,24 +1,23 @@
 package com.example.demo.service;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 import org.springframework.stereotype.Service;
 
+import com.example.demo.domain.MetaData;
+
 @Service
 public class HelloServiceImpl implements HelloService {
 
 	@Override
-	public Map<String, String> getMetaData(String url) {
+	public MetaData getMetaData(MetaData metaData) {
 		
-		Map<String, String> result = new HashMap<String, String>();
+		MetaData result = new MetaData();
 		
 		try {
 			
-			String connUrl = "https://"+url;
+			String connUrl = "https://"+metaData.getUrl();
 			Document doc = Jsoup.connect(connUrl).get();
 			String title;
 			String description;
@@ -49,10 +48,13 @@ public class HelloServiceImpl implements HelloService {
 				image= metaImage.attr("content");
 			}
 			
-			result.put("title", title);
-			result.put("description", description);
-			result.put("image", image);
+			result.setTitle(title);
+			result.setDescription(description);
+			result.setImage(image);
 			
+			System.out.println("----------------------- 크롤링결과");
+			System.out.println(result.toString());
+			System.out.println("----------------------- 크롤링결과");
 			
 		} catch (Exception e) {
 			e.printStackTrace();

@@ -19,4 +19,18 @@
 			url = #{url}
 	</select>
 	
+	<insert id="insertMetaData" parameterType="com.example.demo.domain.MetaData">
+		INSERT INTO metaData(
+			url,
+			title,
+			description,
+			image
+		) VALUES(
+			#{url},
+			#{title},
+			#{description},
+			#{image}
+		)
+	</insert>
+	
 </mapper>

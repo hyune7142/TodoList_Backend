@@ -9,4 +9,6 @@ public interface MetaDataService {
 	
 	public MetaData getMetaData(MetaData metaData);
 	
+	public void insertMetaData(MetaData metaData);
+	
 }

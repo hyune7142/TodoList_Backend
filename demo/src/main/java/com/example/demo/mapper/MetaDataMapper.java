@@ -10,9 +10,9 @@ public interface MetaDataMapper {
 	public MetaData getMetaData(MetaData metaData);
 	
 	// insert MetaData
-	public void inMetaData(MetaData metaData);
+	public void insertMetaData(MetaData metaData);
 	
 	// update MetaData
-	public void upMetaData(MetaData metaData);
+	public void updateMetaData(MetaData metaData);
 	
 }

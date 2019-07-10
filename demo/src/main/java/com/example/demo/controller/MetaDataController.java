@@ -19,7 +19,17 @@ public class MetaDataController {
 	
 	@RequestMapping(value="/metadata", method=RequestMethod.GET)
 	public MetaData index(MetaData metaData) throws IOException {
-		return metaDataService.getMetaData(metaData);
+		
+		MetaData result = metaDataService.getMetaData(metaData);
+		
+		// 요청 url 정보가 DB에 없을 경우
+		if(result == null) {
+			metaDataService.insertMetaData(metaData);
+			result =  metaDataService.getMetaData(metaData);
+		}
+		
+		
+		return result;
 	}
 	
 }
