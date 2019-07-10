@@ -23,7 +23,8 @@ public class MetaDataController {
 	
 	@RequestMapping(value="/metadata", method=RequestMethod.GET)
 	public MetaData index(MetaData metaData) throws IOException {
-		
+		long start = System.currentTimeMillis();
+	    System.out.println("####ehCache is Running...");
 		MetaData result = metaDataService.getMetaData(metaData);
 		
 		// 요청 url 정보가 DB에 없을 경우
@@ -56,7 +57,8 @@ public class MetaDataController {
 			
 		}
 		
-		
+	    long end = System.currentTimeMillis();
+	    System.out.println("시간측정"+"  :  " +Long.toString(end-start));
 		return result;
 	}
 	
