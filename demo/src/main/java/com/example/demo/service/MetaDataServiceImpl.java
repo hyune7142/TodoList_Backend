@@ -66,7 +66,7 @@ public class MetaDataServiceImpl implements MetaDataService {
 			}
 			
 			if(metaData.getUrl().contains("youtube")) {
-				image = metaData.getUrl()+image;
+				image = "https://"+metaData.getUrl()+image;
 			}
 			
 			// DB insert data setting

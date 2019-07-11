@@ -65,7 +65,7 @@ public class MetaDataController {
 		}
 		
 	    long end = System.currentTimeMillis();
-	    System.out.println("---------- 시간측정"+"  ::  " +Long.toString(end-start));
+	    System.out.println("---------- 시간측정"+"  ::  " +Long.toString(end-start)+"ms");
 		return result;
 	}
 	
