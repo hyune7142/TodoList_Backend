@@ -10,7 +10,7 @@
 		SELECT
 			COUNT(id)
 		FROM
-			todoList1
+			todoList2
 	</select>
 	
 	<select id="getTodoList" parameterType="com.example.demo.domain.TodoList" resultType="hashmap">
@@ -21,9 +21,9 @@
 			color,
 			moment
 		from 
-			todoList1
+			todoList2
 		WHERE
-		 	useYn = 'y'
+		 	useYn = 'Y'
 	</select>
 	
 	<insert id="insertTodo" parameterType="com.example.demo.domain.TodoList">
@@ -52,12 +52,12 @@
 			id = #{id}
 	</update>
 
-<update id="updateItem" parameterType="com.example.demo.domain.TodoList">
-	update todoList1 set 
-	text = #{text},
-	color = #{color} 
-	where 
-	id=#{id}
+	<update id="updateItem" parameterType="com.example.demo.domain.TodoList">
+		UPDATE todoList2 SET 
+			text = #{text},
+			color = #{color} 
+		WHERE 
+			id = #{id}
 	</update>
 	
 </mapper>

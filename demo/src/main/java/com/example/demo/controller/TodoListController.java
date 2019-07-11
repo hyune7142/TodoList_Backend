@@ -40,7 +40,6 @@ public class TodoListController {
 		todoListService.insertTodo(todoList);
 	}
 	
-
 	// Update Todo Checked
 	@RequestMapping(value="/checked", method=RequestMethod.POST)
 	public void checkedTodo(TodoList todoList)  {
@@ -54,11 +53,12 @@ public class TodoListController {
 		System.out.println("---------- delete Todo :: ");
 		todoListService.deleteTodo(todoList);
 	}	
-  
+
+	// Update Todo
 	@RequestMapping(value="/todoitem", method=RequestMethod.PATCH)
 	public  void update(TodoList todoitem)  {
-	System.out.println(todoitem);
-			todoListService.updateItem(todoitem);
-	}
+		System.out.println(todoitem);
+		todoListService.updateItem(todoitem);
+
 	
 }

@@ -13,7 +13,8 @@ public interface TodoListMapper {
 	
 	// select TodoList
 	public ArrayList<TodoList> getTodoList();
-
+	
+	// update TodoList
 	public void updateItem(TodoList todoitem);
 
 	// insert TodoList

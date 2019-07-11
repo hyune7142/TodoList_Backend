@@ -14,12 +14,10 @@ public class TodoListServiceImpl implements TodoListService {
 
 	@Override
 	public ArrayList<TodoList> getTodoList() {
-		
 		return todoListMapper.getTodoList();
 	}
 
 	@Override
-
 	public void insertTodo(TodoList todoList) {
 		todoListMapper.insertTodo(todoList);
 	}
@@ -32,12 +30,11 @@ public class TodoListServiceImpl implements TodoListService {
 	@Override
 	public void deleteTodo(TodoList todoList) {
 		todoListMapper.deleteTodo(todoList);
-  
-  @Override
+	}
+	
+	@Override
 	public void updateItem(TodoList todoitem) {
 		todoListMapper.updateItem(todoitem);
-		
-
 	}
-
+  
 }
