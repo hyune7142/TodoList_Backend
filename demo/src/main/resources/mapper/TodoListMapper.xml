@@ -54,7 +54,8 @@
 	<update id="updateItem" parameterType="com.example.demo.domain.TodoList">
 		UPDATE todoList2 SET 
 			text = #{text},
-			color = #{color} 
+			color = #{color},
+			checked = #{checked}
 		WHERE 
 			id = #{id}
 	</update>
