@@ -57,8 +57,8 @@ public class TodoListController {
 	// Update Todo
 	@RequestMapping(value="/todoitem", method=RequestMethod.PATCH)
 	public  void update(TodoList todoitem)  {
-		System.out.println(todoitem);
+		System.out.println("---------- update Todo ::");
 		todoListService.updateItem(todoitem);
-
+	}
 	
 }
