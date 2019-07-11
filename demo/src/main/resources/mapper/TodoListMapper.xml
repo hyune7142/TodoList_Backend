@@ -5,9 +5,25 @@
 
 
 <mapper namespace="com.example.demo.mapper.TodoListMapper">
+
+	<select id="getTotalCnt" resultType="int">
+		SELECT
+			COUNT(id)
+		FROM
+			todoList2
+	</select>
 	
-		<select id="getTodoList" parameterType="com.example.demo.domain.TodoList" resultType="hashmap">
-		select id,text,checked,color,moment,useyn from todoList1;
+	<select id="getTodoList" parameterType="com.example.demo.domain.TodoList" resultType="hashmap">
+		SELECT 
+			id,
+			text,
+			checked,
+			color,
+			moment
+		from 
+			todoList2
+		WHERE
+		 	useYn = 'Y'
 	</select>
 
 

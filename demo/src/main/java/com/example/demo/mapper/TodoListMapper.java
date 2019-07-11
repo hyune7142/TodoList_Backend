@@ -9,7 +9,9 @@ import com.example.demo.domain.TodoList;
 @Repository
 public interface TodoListMapper {
 	
-
+	// select All Count
+	public int getTotalCnt();
+	
 	// select TodoList
 	public ArrayList<TodoList> getTodoList();
 
