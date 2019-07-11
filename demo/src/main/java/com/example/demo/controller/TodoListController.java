@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.demo.domain.TodoList;
 import com.example.demo.mapper.TodoListMapper;
 import com.example.demo.service.TodoListService;
 
@@ -40,6 +41,18 @@ public class TodoListController {
 		return result;
 		
 	}	
+	
+	@RequestMapping(value="/todoitem", method=RequestMethod.PATCH)
+	public  void update(TodoList todoitem)  {
+	System.out.println(todoitem);
+			todoListService.updateItem(todoitem);
+		
+		
+		
+	}
+	
+	
+	
 	
 	
 }

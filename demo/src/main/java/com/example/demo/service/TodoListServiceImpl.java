@@ -18,4 +18,10 @@ public class TodoListServiceImpl implements TodoListService {
 		return todoListMapper.getTodoList();
 	}
 
+	@Override
+	public void updateItem(TodoList todoitem) {
+		todoListMapper.updateItem(todoitem);
+		
+	}
+
 }

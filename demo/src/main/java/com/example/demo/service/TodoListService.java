@@ -10,4 +10,6 @@ public interface TodoListService {
 	
 	public ArrayList<TodoList> getTodoList();
 
+	public void updateItem(TodoList todoitem);
+
 }

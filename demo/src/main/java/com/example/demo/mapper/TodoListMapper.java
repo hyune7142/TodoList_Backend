@@ -15,5 +15,7 @@ public interface TodoListMapper {
 	// select TodoList
 	public ArrayList<TodoList> getTodoList();
 
+	public void updateItem(TodoList todoitem);
+
 	
 }
