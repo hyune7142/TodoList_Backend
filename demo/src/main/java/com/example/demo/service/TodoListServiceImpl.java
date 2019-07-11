@@ -32,5 +32,10 @@ public class TodoListServiceImpl implements TodoListService {
 	public void deleteTodo(TodoList todoList) {
 		todoListMapper.deleteTodo(todoList);
 	}
+	
+	@Override
+	public void updateItem(TodoList todoitem) {
+		todoListMapper.updateItem(todoitem);
+	}
 
 }

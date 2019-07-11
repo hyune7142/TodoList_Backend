@@ -52,6 +52,12 @@
 			id = #{id}
 	</update>
 
-
+	<update id="updateItem" parameterType="com.example.demo.domain.TodoList">
+		UPDATE todoList2 SET 
+			text = #{text},
+			color = #{color} 
+		WHERE 
+			id = #{id}
+	</update>
 	
 </mapper>
