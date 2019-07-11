@@ -28,4 +28,9 @@ public class TodoListServiceImpl implements TodoListService {
 		todoListMapper.checkTodo(todoList);
 	}
 
+	@Override
+	public void deleteTodo(TodoList todoList) {
+		todoListMapper.deleteTodo(todoList);
+	}
+
 }

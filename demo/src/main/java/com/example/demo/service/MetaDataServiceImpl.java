@@ -75,19 +75,19 @@ public class MetaDataServiceImpl implements MetaDataService {
 			result.setDescription(description);
 			result.setImage(image);
 			
-			System.out.println("----------------------- 크롤링결과");
+			System.out.println("---------- 크롤링 결과");
 			System.out.println(result.getUrl()+", "+result.getTitle()+", "+result.getDescription()+", "+result.getImage());
-			System.out.println("----------------------- 크롤링결과");
+			System.out.println("------------------------------");
 			
 			
 			switch (order) {
 			case "insert":
-				System.out.println("INSERT 진입2");
+				System.out.println("---------- INSERT MetaData 진입");
 				metaDataMapper.insertMetaData(result);
 				break;
 
 			case "update":
-				System.out.println("UPDATE 진입2");
+				System.out.println("---------- UPDATE MetaData 진입");
 				Calendar cal = Calendar.getInstance();
 				result.setSaveTime(cal.getTime());
 				metaDataMapper.updateMetaData(result);

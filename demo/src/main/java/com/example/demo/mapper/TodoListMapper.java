@@ -19,5 +19,8 @@ public interface TodoListMapper {
 	
 	// update Check
 	public void checkTodo(TodoList todoList);
+	
+	// delete Todo
+	public void deleteTodo(TodoList todoList);
 
 }

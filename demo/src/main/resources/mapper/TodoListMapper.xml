@@ -44,6 +44,13 @@
 		WHERE
 			id = #{id}
 	</update>
+	
+	<update id="deleteTodo" parameterType="com.example.demo.domain.TodoList">
+		UPDATE todoList2 SET
+			useYn = 'N'
+		WHERE
+			id = #{id}
+	</update>
 
 
 	
