@@ -14,7 +14,6 @@ public class TodoListServiceImpl implements TodoListService {
 
 	@Override
 	public ArrayList<TodoList> getTodoList() {
-		
 		return todoListMapper.getTodoList();
 	}
 
@@ -37,5 +36,5 @@ public class TodoListServiceImpl implements TodoListService {
 	public void updateItem(TodoList todoitem) {
 		todoListMapper.updateItem(todoitem);
 	}
-
+  
 }
