@@ -11,6 +11,7 @@ public interface TodoListService {
 	
 	public ArrayList<TodoList> getTodoList();
 
+
 	// insert
 	public void insertTodo(TodoList todoList);
 	
@@ -20,4 +21,8 @@ public interface TodoListService {
 	// delete Todo
 	public void deleteTodo(TodoList todoList);
 	
+  // update Todo
+	public void updateItem(TodoList todoitem);
+
+
 }
