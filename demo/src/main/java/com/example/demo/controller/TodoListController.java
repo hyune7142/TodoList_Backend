@@ -20,6 +20,8 @@ public class TodoListController {
 	@Autowired TodoListService todoListService;
 	@Autowired TodoListMapper todoListMapper;
 	
+	
+	// Get TodoList
 	@RequestMapping(value="/", method=RequestMethod.GET)
 	public Map<String, Object> index()  {
 		
@@ -31,28 +33,32 @@ public class TodoListController {
 		
 	}
 	
-	@RequestMapping(value="/insert", method=RequestMethod.GET)
-	public Map<String, Object> insertTodo()  {
-		
-		Map<String, Object> result = new HashMap<String, Object>();
-		
-		result.put("totalCnt", todoListMapper.getTotalCnt());
-		result.put("todoList", todoListService.getTodoList());
-		return result;
-		
-	}	
+	// Insert Todo
+	@RequestMapping(value="/insert", method=RequestMethod.POST)
+	public void insertTodo(TodoList todoList)  {
+		System.out.println("---------- insert Todo :: ");
+		todoListService.insertTodo(todoList);
+	}
 	
+
+	// Update Todo Checked
+	@RequestMapping(value="/checked", method=RequestMethod.POST)
+	public void checkedTodo(TodoList todoList)  {
+		System.out.println("---------- update Check :: ");
+		todoListService.checkTodo(todoList);
+	}	
+
+	// Delete Todo
+	@RequestMapping(value="/delete", method=RequestMethod.POST)
+	public void TodoDelete(TodoList todoList)  {
+		System.out.println("---------- delete Todo :: ");
+		todoListService.deleteTodo(todoList);
+	}	
+  
 	@RequestMapping(value="/todoitem", method=RequestMethod.PATCH)
 	public  void update(TodoList todoitem)  {
 	System.out.println(todoitem);
 			todoListService.updateItem(todoitem);
-		
-		
-		
 	}
-	
-	
-	
-	
 	
 }

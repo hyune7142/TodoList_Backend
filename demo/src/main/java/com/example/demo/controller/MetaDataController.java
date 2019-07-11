@@ -26,11 +26,12 @@ public class MetaDataController {
 		
 		long start = System.currentTimeMillis();
 		
-		MetaData result = metaDataMapper.getData(metaData);	 // 캐쉬생성 X
+		// URL MetaData DB 검색
+		MetaData result = metaDataMapper.getData(metaData);
 		
 		// 요청 url 정보가 DB에 없을 경우
 		if(result == null) {
-			System.out.println("insert 출력");
+			System.out.println("---------- insert 출력 :: 해당 URL의 MetaData 정보없음 ");
 			metaDataService.IoMetaData(metaData, "insert"); 
 			result =  metaDataService.getMetaData(metaData);
 		} else {
@@ -49,11 +50,11 @@ public class MetaDataController {
 				
 				
 				if(diffDay >  1) {
-					System.out.println("update 출력");
+					System.out.println("---------- Updata MetaData 진입 :: MetaData Info 1일이상 경과 ");
 					metaDataService.IoMetaData(metaData, "update");
 					result =  metaDataService.getMetaData(metaData);
 				}else {
-					System.out.println("일반 출력");
+					System.out.println("---------- 일반 출력 ::");
 					result =  metaDataService.getMetaData(metaData);
 				}
 				
@@ -64,7 +65,7 @@ public class MetaDataController {
 		}
 		
 	    long end = System.currentTimeMillis();
-	    System.out.println("시간측정"+"  :  " +Long.toString(end-start));
+	    System.out.println("---------- 시간측정"+"  ::  " +Long.toString(end-start)+"ms");
 		return result;
 	}
 	

@@ -19,9 +19,25 @@ public class TodoListServiceImpl implements TodoListService {
 	}
 
 	@Override
+
+	public void insertTodo(TodoList todoList) {
+		todoListMapper.insertTodo(todoList);
+	}
+
+	@Override
+	public void checkTodo(TodoList todoList) {
+		todoListMapper.checkTodo(todoList);
+	}
+
+	@Override
+	public void deleteTodo(TodoList todoList) {
+		todoListMapper.deleteTodo(todoList);
+  
+  @Override
 	public void updateItem(TodoList todoitem) {
 		todoListMapper.updateItem(todoitem);
 		
+
 	}
 
 }

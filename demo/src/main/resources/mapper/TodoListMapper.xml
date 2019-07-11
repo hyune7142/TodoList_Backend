@@ -25,6 +25,32 @@
 		WHERE
 		 	useYn = 'y'
 	</select>
+	
+	<insert id="insertTodo" parameterType="com.example.demo.domain.TodoList">
+		INSERT INTO todoList2(
+			id,
+			text,
+			color
+		) VALUES (
+			#{id},
+			#{text},
+			#{color}
+		)
+	</insert>
+	
+	<update id="checkTodo" parameterType="com.example.demo.domain.TodoList">
+		UPDATE todoList2 SET
+			checked = #{checked}
+		WHERE
+			id = #{id}
+	</update>
+	
+	<update id="deleteTodo" parameterType="com.example.demo.domain.TodoList">
+		UPDATE todoList2 SET
+			useYn = 'N'
+		WHERE
+			id = #{id}
+	</update>
 
 <update id="updateItem" parameterType="com.example.demo.domain.TodoList">
 	update todoList1 set 
