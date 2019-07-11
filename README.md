@@ -3,3 +3,5 @@ TodoList_SpringBoot_Backend
 
 
 Rest API - Spring Boot
+
+DB : MySQL
