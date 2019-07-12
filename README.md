@@ -1,7 +1,6 @@
 # TodoList_Backend
 # 기본정보
 ```
-TodoList_SpringBoot_Backend
 Rest API - Spring Boot
 ```
 
