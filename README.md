@@ -1,7 +1,26 @@
 # tutorial
+
+```
 TodoList_SpringBoot_Backend
-
-
 Rest API - Spring Boot
+```
 
-DB : MySQL
+# DB 정보
+```
+CREATE TABLE `metaData` (
+	`url` VARCHAR(200) NOT NULL,
+	`title` VARCHAR(200) NOT NULL,
+	`description` VARCHAR(200) NOT NULL,
+	`image` VARCHAR(300) NOT NULL,
+	`saveTime` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE `todoList2` (
+	`id` INT(10) NULL DEFAULT NULL,
+	`text` VARCHAR(200) NULL DEFAULT NULL,
+	`checked` VARCHAR(1) NOT NULL DEFAULT 'N',
+	`color` VARCHAR(10) NULL DEFAULT NULL,
+	`moment` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	`useYn` VARCHAR(1) NOT NULL DEFAULT 'Y'
+)
+```
